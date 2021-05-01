@@ -1,6 +1,6 @@
 function Item() {
     return (
-        <h1>Hello react-app!</h1>
+        <h1></h1>
     )
 }
 
