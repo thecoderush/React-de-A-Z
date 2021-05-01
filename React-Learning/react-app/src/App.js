@@ -1,13 +1,11 @@
+import Random from "./Random.js";
+import Title from "./Title.js";
+
 function App() {
   return (
     <div className="App">
-      <h1>Hello World!</h1>
-      <p>Lorem ipsum dolor sit amet.</p>
-      <input type="text"/>
-      <input type="text"/>
-      <br/>
-      <button>Changer le state</button>
-      {true ? 1000 : "abc"}
+      <Title />
+      <Random /> 
     </div>
 
   //  return React.createElement(
