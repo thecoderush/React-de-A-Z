@@ -1,6 +1,10 @@
 import Item from "./Item"
 
-function Random ({date}) {
+
+function Random (props) {
+
+    const myFunc = () => {}
+
     return (
         <div>
             <input type="text"/>
@@ -8,10 +12,10 @@ function Random ({date}) {
             <br/>
             <button>Random button</button>
             {true ? 1000 : "abc"}
-            <Item txt={"Hello France!"}/>
-            <Item txt={"Hello Italy!"}/>
-            <Item txt={"Hello USA!"}/>
-            <h6>This is myState1 duplicated in Random.js component: {date}</h6>
+            <Item txt={"Hello France!"} function={props.function}/>
+            <Item txt={"Hello Italy!"} function={props.function}/>
+            <Item txt={"Hello USA!"} function={props.function}/>
+            <h6>This is myState1 duplicated in Random.js component: {props.date}</h6>
         </div>
     )
 }

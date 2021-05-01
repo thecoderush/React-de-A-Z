@@ -16,8 +16,10 @@ function App() {
   console.log(myState1);
 
   
-  const modifyState1 = () => {
-    setmyState1(secondState1)
+  const modifyState1 = (data) => {
+    // setmyState1(secondState1)
+    console.log(data)
+    setmyState1(data)
   }
   
 
@@ -29,9 +31,11 @@ function App() {
   return (
     <div className="App">
       <Title date={myState2}/>
-      <Random date={myState1}/>
+      
       <h2>This is my state : {myState1}</h2>
       <button onClick={modifyState1} >Change le state from App.js</button>
+      
+      <Random date={myState1} function={modifyState1}/>
     </div>
   );
 }
