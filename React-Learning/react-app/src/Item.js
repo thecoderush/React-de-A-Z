@@ -1,6 +1,9 @@
-function Item() {
+function Item({txt}) {
+
+    console.log(txt);
+
     return (
-        <h1></h1>
+        <h3>{txt}</h3>
     )
 }
 
