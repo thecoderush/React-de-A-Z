@@ -1,6 +1,6 @@
-import {useState} from 'react';
-import Random from "./Random.js";
-import Title from "./Title.js";
+import {useState} from 'react'
+import Random from "./Random.js"
+import Title from "./Title.js"
 
 function App() {
 
@@ -8,12 +8,14 @@ function App() {
 
   const initialState = "Hello react-app!"
   const secondState = "20"
+
   const [myState, setmyState] = useState(initialState)
+
   console.log(useState)
-  console.log(useState("Hello react-app!"));
+  console.log(useState("Hello react-app!"))
   console.log(myState);
 
-  let state = true;
+  let state = true
 
   const modifyState = () => {
     setmyState(secondState)
@@ -29,7 +31,7 @@ function App() {
   );
 }
 
-export default App;
+export default App
 
   //  return React.createElement(
   //   'div',

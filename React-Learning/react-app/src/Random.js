@@ -1,4 +1,4 @@
-import Item from "./Item";
+import Item from "./Item"
 
 function Random () {
     return (
@@ -13,4 +13,4 @@ function Random () {
     )
 }
 
-export default Random;
+export default Random
