@@ -5,13 +5,13 @@ function Item(props) {
     console.log(props)
 
     
-    const [itemState, setitemState] = useState("Item state!")
+    const [itemState, setItemState] = useState("Item state!")
 
     return (
         <>
             <h3>{props.txt}</h3>
             <button onClick={props.function}>modifyState1</button>
-            <button onClick={() => props.function(itemState)}></button>
+            <button onClick={() => props.function(itemState)}>modifyState from child</button>
         </>
     )
 }

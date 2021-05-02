@@ -6,36 +6,36 @@ function App() {
 
   console.log("Mise à jour!")
 
-  const initialState1= "Hello react-app!"
-  const secondState1 = "20"
+  const initialMessageState= "Hello react-app!"
+  const number = "20"
 
-  const [myState1, setmyState1] = useState(initialState1)
+  const [messageState, setMessageState] = useState(initialMessageState)
 
   console.log(useState)
   console.log(useState("Hello react-app!"))
-  console.log(myState1);
+  console.log(messageState);
 
   
-  const modifyState1 = (data) => {
-    // setmyState1(secondState1)
+  const modifyState = (data) => {
+    // setMessageState(secondState1)
     console.log(data)
-    setmyState1(data)
+    setMessageState(data)
   }
   
 
-  const initialState2 = "01/05/21"
+  const initialDateState = "01/05/21"
 
-  const [myState2, setmyState2] = useState(initialState2)
+  const [dateState, setDateState] = useState(initialDateState)
 
 
   return (
     <div className="App">
-      <Title date={myState2}/>
+      <Title dateState={dateState}/>
       
-      <h2>This is my state : {myState1}</h2>
-      <button onClick={modifyState1} >Change le state from App.js</button>
+      <h2>This is my state : {messageState}</h2>
+      <button onClick={modifyState} >Change le state from App.js</button>
       
-      <Random date={myState1} function={modifyState1}/>
+      <Random dateState={messageState} function={modifyState}/>
     </div>
   );
 }

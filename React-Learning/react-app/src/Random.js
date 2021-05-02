@@ -3,11 +3,8 @@ import Item from "./Item"
 
 function Random (props) {
 
-    const myFunc = () => {}
-
     return (
         <div>
-            <input type="text"/>
             <input type="text"/>
             <br/>
             <button>Random button</button>
