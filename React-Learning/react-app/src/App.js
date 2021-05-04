@@ -43,21 +43,67 @@ function App() {
 
   console.log(inputData)
 
-  return (
-    <div className="App">
-      <Title dateState={dateState}/>
-      
-      <h2>This is my state : {messageState}</h2>
-      <button onClick={modifyState} >Change le state from App.js</button>
-      
-      <Random date={messageState} function={modifyState}/>
 
-      <h1>Hello depuis App</h1>
-      <Item2 />
+  const [toggle, setToggle] = useState(true)
 
-      <input type="text" value={inputData} onInput={event => modifyInput(event.target.value)}/>
-    </div>
-  );
+  const modifyToggle = () => {
+    setToggle(!toggle)
+  }
+ 
+  let toggleContenu
+  
+  if(toggle){
+    toggleContenu = <h1>Contenu if toogle est true</h1>
+  } else {
+    toggleContenu = <h1>Contenu if toogle est false</h1>
+  }
+
+  if(toggle) {
+
+    return (
+      <div className="App">
+        <Title dateState={dateState}/>
+        
+        <h2>This is my state : {messageState}</h2>
+        <button onClick={modifyState} >Change le state from App.js</button>
+        
+        <Random date={messageState} function={modifyState}/>
+  
+        <h1>Hello depuis App</h1>
+        <Item2 />
+  
+        <input type="text" value={inputData} onInput={event => modifyInput(event.target.value)}/>
+      
+        <h1>Le toggle state est true</h1>
+        <button onClick={modifyToggle}>modify toggle</button>
+        {toggleContenu}
+      </div>
+    )
+    
+  } else if(!toggle) {
+
+    return (
+      <div className="App">
+        <Title dateState={dateState}/>
+        
+        <h2>This is my state : {messageState}</h2>
+        <button onClick={modifyState} >Change le state from App.js</button>
+        
+        <Random date={messageState} function={modifyState}/>
+  
+        <h1>Hello depuis App</h1>
+        {/* <Item2 /> */}
+  
+        <input type="text" value={inputData} onInput={event => modifyInput(event.target.value)}/>
+      
+        <h1>Le toggle state est false</h1>
+        <button onClick={modifyToggle}>modify toggle</button>
+        {toggleContenu}
+      </div>
+    )
+    
+  }
+
 }
 
 export default App
