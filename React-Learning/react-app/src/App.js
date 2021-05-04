@@ -4,6 +4,7 @@ import Title from './Title.js'
 import './index.css'
 import Item2 from './Components/Item/Item2'
 import Ternary from './Ternary.js'
+import ToggleClass from './Components/ToggleClass/ToggleClass.js'
 
 
 function App() {
@@ -80,7 +81,7 @@ function App() {
         {toggleContenu}
 
         <Ternary />
-
+        <ToggleClass />
       </div>
     )
     
@@ -105,7 +106,7 @@ function App() {
         {toggleContenu}
 
         <Ternary />
-
+        <ToggleClass />
       </div>
     )
     
