@@ -18,7 +18,7 @@ function App() {
 
   console.log(useState)
   console.log(useState("Hello react-app!"))
-  console.log(messageState);
+  console.log(messageState)
 
   
   const modifyState = (data) => {
@@ -33,6 +33,16 @@ function App() {
   const [dateState, setDateState] = useState(initialDateState)
 
 
+  const [inputData, setInputData] = useState("initial input state value")
+
+  const modifyInput = (event) => {
+    console.log("It's the input")
+    console.log(event)
+    setInputData(event)
+  }
+
+  console.log(inputData)
+
   return (
     <div className="App">
       <Title dateState={dateState}/>
@@ -44,6 +54,8 @@ function App() {
 
       <h1>Hello depuis App</h1>
       <Item2 />
+
+      <input type="text" value={inputData} onInput={event => modifyInput(event.target.value)}/>
     </div>
   );
 }
