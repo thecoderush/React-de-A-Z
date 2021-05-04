@@ -1,8 +1,13 @@
 import {useState} from 'react'
 import Random from "./Random.js"
 import Title from "./Title.js"
+import "./index.css"
+import Item2 from "./Components/Item/Item2"
+
 
 function App() {
+
+
 
   console.log("Mise à jour!")
 
@@ -35,7 +40,10 @@ function App() {
       <h2>This is my state : {messageState}</h2>
       <button onClick={modifyState} >Change le state from App.js</button>
       
-      <Random dateState={messageState} function={modifyState}/>
+      <Random date={messageState} function={modifyState}/>
+
+      <h1>Hello depuis App</h1>
+      <Item2 />
     </div>
   );
 }
