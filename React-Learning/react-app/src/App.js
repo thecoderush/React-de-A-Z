@@ -3,6 +3,7 @@ import Random from './Random.js'
 import Title from './Title.js'
 import './index.css'
 import Item2 from './Components/Item/Item2'
+import Ternary from './Ternary.js'
 
 
 function App() {
@@ -77,6 +78,9 @@ function App() {
         <h1>Le toggle state est true</h1>
         <button onClick={modifyToggle}>modify toggle</button>
         {toggleContenu}
+
+        <Ternary />
+
       </div>
     )
     
@@ -99,6 +103,9 @@ function App() {
         <h1>Le toggle state est false</h1>
         <button onClick={modifyToggle}>modify toggle</button>
         {toggleContenu}
+
+        <Ternary />
+
       </div>
     )
     
