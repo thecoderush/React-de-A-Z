@@ -1,4 +1,10 @@
 .external-css-file {
     color: steelblue;
     font-size: 50px;
+    background: url('./luke-porter.jpg');
+}
+
+.purple-flowers {
+    width: 100%;
+    height: auto;
 }

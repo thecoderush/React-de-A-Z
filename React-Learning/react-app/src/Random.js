@@ -1,11 +1,11 @@
-import Item from "./Item"
+import Item from './Item'
 
 
 function Random (props) {
 
     return (
         <div>
-            <input type="text"/>
+            <input type='text'/>
             <br/>
             <button>Random button</button>
             {true ? 1000 : "abc"}

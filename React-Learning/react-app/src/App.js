@@ -1,8 +1,8 @@
 import {useState} from 'react'
-import Random from "./Random.js"
-import Title from "./Title.js"
-import "./index.css"
-import Item2 from "./Components/Item/Item2"
+import Random from './Random.js'
+import Title from './Title.js'
+import './index.css'
+import Item2 from './Components/Item/Item2'
 
 
 function App() {
