@@ -5,7 +5,7 @@ import './index.css'
 import Item2 from './Components/Item/Item2'
 import Ternary from './Ternary.js'
 import ToggleClass from './Components/ToggleClass/ToggleClass.js'
-
+import List from './List.js'
 
 function App() {
 
@@ -82,6 +82,7 @@ function App() {
 
         <Ternary />
         <ToggleClass />
+        <List />
       </div>
     )
     
@@ -107,6 +108,7 @@ function App() {
 
         <Ternary />
         <ToggleClass />
+        <List />
       </div>
     )
     
