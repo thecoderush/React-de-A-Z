@@ -27,6 +27,24 @@ function App() {
       })
   }, [])
 
+  const [timer, setTimer] = useState(1)
+
+  // setInterval(() => {
+  //   setTimer(timer+1)
+  // }, 1000) 
+
+  useEffect(() => {
+    const intervalID = setInterval(() => {
+      // setTimer(timer+1)
+      // console.log(timer)
+      setTimer(timer => timer+1)
+    }, 3000) 
+
+    return () => {
+      clearInterval(intervalID)
+    }
+  }, [])
+
   return (
     <div className="App">
       <h1>Le state est {dataComponent}</h1>
@@ -39,6 +57,7 @@ function App() {
           style={{width: "500px", marginTop: "50px"}}
         /> 
       }
+      <h1>Timer state : {timer}</h1>
     </div>
   );
 }
