@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import Timer from './Timer'
 import './App.css';
 
 function App() {
@@ -27,23 +28,12 @@ function App() {
       })
   }, [])
 
-  const [timer, setTimer] = useState(1)
+  
+  const [toggle, setToggle] = useState(false)
 
-  // setInterval(() => {
-  //   setTimer(timer+1)
-  // }, 1000) 
-
-  useEffect(() => {
-    const intervalID = setInterval(() => {
-      // setTimer(timer+1)
-      // console.log(timer)
-      setTimer(timer => timer+1)
-    }, 3000) 
-
-    return () => {
-      clearInterval(intervalID)
-    }
-  }, [])
+  const changeToggle = () => {
+    setToggle(!toggle)
+  }
 
   return (
     <div className="App">
@@ -57,7 +47,12 @@ function App() {
           style={{width: "500px", marginTop: "50px"}}
         /> 
       }
-      <h1>Timer state : {timer}</h1>
+      {/* <Timer /> */}
+
+      <button onClick={changeToggle}>Change toogle state</button>
+      <h2>{toggle ? "True" : "False"}</h2>
+
+      {toggle && <Timer />}
     </div>
   );
 }
