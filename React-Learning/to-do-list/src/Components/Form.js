@@ -18,7 +18,7 @@ export default function Form() {
         setStateInput(event)
     }
 
-    const addTdo = event => {
+    const addTodo = event => {
         event.preventDefault()
         
         const newArr = [...dataArr]
@@ -43,7 +43,7 @@ export default function Form() {
 
     return (
         <div className="m-auto px-4 col-12 col-sm-10 col-lg-6">
-            <form onSubmit={event => addTdo(event)} className="mb-3">
+            <form onSubmit={event => addTodo(event)} className="mb-3">
                 <label htmlFor="todo" className="form-label mt-3">Chose à faire</label>
                 <input 
                     type="text" 
