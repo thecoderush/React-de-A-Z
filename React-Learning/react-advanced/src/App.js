@@ -1,7 +1,9 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Timer from "./Timer";
 import Video from "./Video";
 import "./App.css";
+import MultiRef from "./MultiRef";
+import CatAPI from "./CatAPI";
 
 function App() {
   const [dataComponent, setDataComponent] = useState(1);
@@ -14,20 +16,6 @@ function App() {
     setDataComponent(dataComponent + 1);
   };
 
-  const [dataImg, setDataImg] = useState();
-
-  useEffect(() => {
-    fetch("https://api.thecatapi.com/v1/images/search")
-      .then((response) => {
-        console.log(response);
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-        setDataImg(data[0].url);
-      });
-  }, []);
-
   const [toggle, setToggle] = useState(false);
 
   const changeToggle = () => {
@@ -39,21 +27,20 @@ function App() {
       <h1>Le state est {dataComponent}</h1>
       <button onClick={changeState}>Increment state</button>
       <br />
-      {dataImg && (
-        <img
-          src={dataImg}
-          alt="cat image"
-          style={{ width: "500px", marginTop: "50px" }}
-        />
-      )}
+      <CatAPI />
       {/* <Timer /> */}
-
-      <button onClick={changeToggle}>Change toogle state</button>
+      
+      <br/>
+      <button onClick={changeToggle} style={{marginTop: "50px"}}>Change toogle state</button>
       <h2>{toggle ? "True" : "False"}</h2>
 
       {toggle && <Timer />}
-
+      
+      <h2 style={{marginTop: "50px"}}>My first video :</h2>
       <Video />
+      
+      <h2 style={{marginTop: "50px"}}>Select array of elements : </h2>
+      <MultiRef />
     </div>
   );
 }
