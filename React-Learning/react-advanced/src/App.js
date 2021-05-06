@@ -6,43 +6,49 @@ import MultiRef from "./MultiRef";
 import CatAPI from "./CatAPI";
 
 function App() {
-  const [dataComponent, setDataComponent] = useState(1);
+    const [dataComponent, setDataComponent] = useState(1);
 
-  useEffect(() => {
-    console.log("dataComponent changed");
-  }, [dataComponent]);
+    useEffect(() => {
+        console.log("dataComponent changed");
+    }, [dataComponent]);
 
-  const changeState = () => {
-    setDataComponent(dataComponent + 1);
-  };
+    const changeState = () => {
+        setDataComponent(dataComponent + 1);
+    };
 
-  const [toggle, setToggle] = useState(false);
+    const [toggle, setToggle] = useState(false);
 
-  const changeToggle = () => {
-    setToggle(!toggle);
-  };
+    const changeToggle = () => {
+        setToggle(!toggle);
+    };
 
-  return (
-    <div className="App">
-      <h1>Le state est {dataComponent}</h1>
-      <button onClick={changeState}>Increment state</button>
-      <br />
-      <CatAPI />
-      {/* <Timer /> */}
+    useEffect(() => {
+        window.addEventListener('resize', actionResize)
+
+
+    })
+
+  	return (
+      	<div className="App">
+          	<h1>Le state est {dataComponent}</h1>
+          	<button onClick={changeState}>Increment state</button>
+          	<br />
+          	<CatAPI />
+          	{/* <Timer /> */}
       
-      <br/>
-      <button onClick={changeToggle} style={{marginTop: "50px"}}>Change toogle state</button>
-      <h2>{toggle ? "True" : "False"}</h2>
+        	<br/>
+        	<button onClick={changeToggle} style={{marginTop: "50px"}}>Change toogle state</button>
+        	<h2>{toggle ? "True" : "False"}</h2>
 
-      {toggle && <Timer />}
+          	{toggle && <Timer />}
       
-      <h2 style={{marginTop: "50px"}}>My first video :</h2>
-      <Video />
+          	<h2 style={{marginTop: "50px"}}>My first video :</h2>
+          	<Video />
       
-      <h2 style={{marginTop: "50px"}}>Select array of elements : </h2>
-      <MultiRef />
-    </div>
-  );
+          	<h2 style={{marginTop: "50px"}}>Select array of elements : </h2>
+          	<MultiRef />
+      </div>
+  	);
 }
 
 export default App;
