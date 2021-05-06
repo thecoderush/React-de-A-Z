@@ -1,25 +1,24 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from "react";
 
 function Timer() {
-  
-  const [timer, setTimer] = useState(1)
+  const [timer, setTimer] = useState(1);
 
   // setInterval(() => {
   //   setTimer(timer+1)
-  // }, 1000) 
+  // }, 1000)
 
   useEffect(() => {
     const intervalID = setInterval(() => {
       // setTimer(timer+1)
       // console.log(timer)
-      setTimer(timer => timer+1)
-    }, 3000) 
+      setTimer((timer) => timer + 1);
+    }, 3000);
 
     return () => {
-        alert('Composant détruit !')    
-        clearInterval(intervalID)
-    }
-  }, [])
+      alert("Composant détruit !");
+      clearInterval(intervalID);
+    };
+  }, []);
 
   return (
     <>
