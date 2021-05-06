@@ -4,6 +4,7 @@ import Video from "./Video";
 import "./App.css";
 import MultiRef from "./MultiRef";
 import CatAPI from "./CatAPI";
+import ToggleArr from "./ToggleArr";
 
 function App() {
     const [dataComponent, setDataComponent] = useState(1);
@@ -53,6 +54,8 @@ function App() {
       
           	<h2 style={{marginTop: "50px"}}>Select array of elements : </h2>
           	<MultiRef />
+
+			<ToggleArr />
       </div>
   	);
 }
