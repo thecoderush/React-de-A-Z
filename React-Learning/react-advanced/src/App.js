@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
-import Timer from "./Timer";
-import Video from "./Video";
-import "./App.css";
-import MultiRef from "./MultiRef";
-import CatAPI from "./CatAPI";
-import ToggleArr from "./ToggleArr";
+import { useState, useEffect } from "react"
+import Timer from "./Timer"
+import Video from "./Video"
+import "./App.css"
+import MultiRef from "./MultiRef"
+import CatAPI from "./CatAPI"
+import ToggleArr from "./ToggleArr"
+import ChildProps from "./ChildProps"
 
 function App() {
     const [dataComponent, setDataComponent] = useState(1);
@@ -55,7 +56,25 @@ function App() {
           	<h2 style={{marginTop: "50px"}}>Select array of elements : </h2>
           	<MultiRef />
 
+			<h2 style={{marginTop: "50px"}}>My toggle array : </h2>
 			<ToggleArr />
+
+			<h2 style={{marginTop: "50px"}}>My content : </h2>
+			<ChildProps>
+				<h1>Titre de mon article 1</h1>
+				<p>Lorem ipsum dolor sit amet.</p>
+			</ChildProps>
+
+			<ChildProps>
+				<h1>Titre de mon article 2</h1>
+				<p>Lorem ipsum dolor sit amet.</p>
+			</ChildProps>
+
+			<ChildProps>
+				<h1>Titre de mon article 3</h1>
+				<p>Lorem ipsum dolor sit amet.</p>
+			</ChildProps>
+			<button onClick={changeToggle}>Change toogle state</button>
       </div>
   	);
 }
