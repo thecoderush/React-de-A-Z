@@ -25,8 +25,14 @@ function App() {
     useEffect(() => {
         window.addEventListener('resize', actionResize)
 
+		function actionResize() {
+			console.log("Resized !!");
+		}
 
-    })
+		return () => {
+			window.removeEventListener('resize', actionResize)
+		}
+    }, [])
 
   	return (
       	<div className="App">
