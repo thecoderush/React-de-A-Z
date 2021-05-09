@@ -7,6 +7,7 @@ import CatAPI from "./CatAPI"
 import ToggleArr from "./ToggleArr"
 import ChildProps from "./ChildProps"
 import MemoContent from "./MemoContent"
+import useDimension from "./useDimension"
 
 function App() {
     const [dataComponent, setDataComponent] = useState(1)
@@ -45,6 +46,16 @@ function App() {
 	const foo = useCallback(() => {
 		console.log("click")
 	}, [])
+
+
+	const browserWidth = useDimension()
+	console.log(browserWidth)
+
+	if(browserWidth > 772) {
+		console.log("Grand écran");
+	} else {
+		console.log("Petit écran");
+	}
 
   	return (
       	<div className="App">
@@ -92,6 +103,7 @@ function App() {
 			<MemoContent arr={tableau} />
 			<h2 style={{marginTop: "50px"}}>My function : </h2>
 			<MemoContent func={foo} />
+
       </div>
   	);
 }
