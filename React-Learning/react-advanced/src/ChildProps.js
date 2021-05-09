@@ -2,6 +2,7 @@ import React from 'react'
 
 export default function ChildProps(props) {
 
+    console.log("Mise à jour");
     console.log(props);
 
     const childPropsStyle = {

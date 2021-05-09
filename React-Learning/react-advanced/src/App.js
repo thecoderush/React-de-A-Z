@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import Timer from "./Timer"
 import Video from "./Video"
 import "./App.css"
@@ -6,6 +6,7 @@ import MultiRef from "./MultiRef"
 import CatAPI from "./CatAPI"
 import ToggleArr from "./ToggleArr"
 import ChildProps from "./ChildProps"
+import MemoContent from "./MemoContent"
 
 function App() {
     const [dataComponent, setDataComponent] = useState(1);
@@ -35,6 +36,11 @@ function App() {
 			window.removeEventListener('resize', actionResize)
 		}
     }, [])
+
+
+	const tableau = useMemo(() => {
+		return [1,2,3,4,5,6] 
+	}, [])
 
   	return (
       	<div className="App">
@@ -75,6 +81,9 @@ function App() {
 				<p>Lorem ipsum dolor sit amet.</p>
 			</ChildProps>
 			<button onClick={changeToggle}>Change toogle state</button>
+
+			<MemoContent num={5} />
+			<MemoContent arr={tableau} />
       </div>
   	);
 }
