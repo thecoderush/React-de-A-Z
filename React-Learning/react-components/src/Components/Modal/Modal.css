@@ -24,6 +24,8 @@
     border-radius: 3px;
     max-width: 600px;
     max-height: 300px;
+    min-width: 250px;
+    min-height: 350px;
 }
 
 .modal-content p {
