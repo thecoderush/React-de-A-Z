@@ -1,9 +1,10 @@
+import Modal from "./Components/Modal/Modal";
 
 function App() {
   return (
-    <div className="App">
-      Hello World! 
-    </div>
+    <>
+      <Modal />
+    </>
   );
 }
 
